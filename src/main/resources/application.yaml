@@ -1,9 +1,9 @@
 spring:
   profiles:
-    active: Brazil
+    active: brazil
 ---
 spring:
-  profiles: Brazil
+  profiles: brazil
 country:
   name: Brazil
   currency: real
@@ -15,7 +15,7 @@ country:
     adding: 800
 ---
 spring:
-  profiles: Japan
+  profiles: japan
 country:
   name: Japan
   currency: yen

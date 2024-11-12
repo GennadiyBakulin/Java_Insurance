@@ -1,28 +1,28 @@
 package com.javaacademy.insurance.serviceimpl;
 
 import com.javaacademy.insurance.contract.enums.TypeOfInsurance;
+import com.javaacademy.insurance.data.CountryData;
 import com.javaacademy.insurance.service.InsuranceCalcService;
 import java.math.BigDecimal;
-import lombok.extern.slf4j.Slf4j;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Component;
 
-@Slf4j
-@Profile("Japan")
+@Profile("japan")
+@Component
+@RequiredArgsConstructor
 public class InsuranceCalcJapanService implements InsuranceCalcService {
+
+  private final CountryData data;
 
   @Override
   public BigDecimal costInsurance(BigDecimal amountOfCoverage, TypeOfInsurance typeOfInsurance) {
     return switch (typeOfInsurance) {
-      case MEDICAL_INSURANCE -> {
-        BigDecimal cost = amountOfCoverage.multiply(BigDecimal.valueOf(0.015))
-            .add(BigDecimal.valueOf(12_000));
-        yield cost;
-      }
-      case PROTECTION_FROM_ROBBERY -> {
-        BigDecimal cost = amountOfCoverage.multiply(BigDecimal.valueOf(0.01))
-            .add(BigDecimal.valueOf(10_000));
-        yield cost;
-      }
+      case MEDICAL_INSURANCE -> amountOfCoverage.multiply(data.getMedical().get("ratio"))
+          .add(data.getMedical().get("adding"));
+
+      case PROTECTION_FROM_ROBBERY -> amountOfCoverage.multiply(data.getRobbery().get("ratio"))
+          .add(data.getRobbery().get("adding"));
     };
   }
 }
