@@ -9,8 +9,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 @ConfigurationProperties(prefix = "country")
-@Setter
 @Getter
+@Setter
 public class CountryData {
 
   private String name;

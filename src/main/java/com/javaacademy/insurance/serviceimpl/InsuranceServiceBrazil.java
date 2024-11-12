@@ -8,8 +8,10 @@ import com.javaacademy.insurance.utils.ContractNumberGenerator;
 import java.math.BigDecimal;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Component;
 
 @Profile("brazil")
+@Component
 @RequiredArgsConstructor
 public class InsuranceServiceBrazil implements InsuranceService {
 
@@ -27,5 +29,4 @@ public class InsuranceServiceBrazil implements InsuranceService {
         data.getName(),
         typeOfInsurance);
   }
-
 }
