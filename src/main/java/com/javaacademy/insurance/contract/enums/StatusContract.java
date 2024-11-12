@@ -8,5 +8,6 @@ import lombok.RequiredArgsConstructor;
 public enum StatusContract {
   PAID("оплаченный договор"),
   UNPAID("неоплаченный договор");
+
   private final String status;
 }
