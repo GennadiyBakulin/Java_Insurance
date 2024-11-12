@@ -4,8 +4,10 @@ import com.javaacademy.insurance.contract.enums.TypeOfInsurance;
 import com.javaacademy.insurance.service.InsuranceCalcService;
 import java.math.BigDecimal;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.annotation.Profile;
 
 @Slf4j
+@Profile("Japan")
 public class InsuranceCalcJapanService implements InsuranceCalcService {
 
   @Override

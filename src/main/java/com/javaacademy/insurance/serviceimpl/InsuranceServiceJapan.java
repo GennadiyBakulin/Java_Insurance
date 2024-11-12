@@ -7,7 +7,9 @@ import com.javaacademy.insurance.contract.enums.TypeOfInsurance;
 import com.javaacademy.insurance.service.InsuranceService;
 import com.javaacademy.insurance.utils.ContractNumberGenerator;
 import java.math.BigDecimal;
+import org.springframework.context.annotation.Profile;
 
+@Profile("Japan")
 public class InsuranceServiceJapan implements InsuranceService {
 
   @Override

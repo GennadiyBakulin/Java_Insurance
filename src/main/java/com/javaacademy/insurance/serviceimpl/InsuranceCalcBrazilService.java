@@ -3,7 +3,9 @@ package com.javaacademy.insurance.serviceimpl;
 import com.javaacademy.insurance.contract.enums.TypeOfInsurance;
 import com.javaacademy.insurance.service.InsuranceCalcService;
 import java.math.BigDecimal;
+import org.springframework.context.annotation.Profile;
 
+@Profile("Brazil")
 public class InsuranceCalcBrazilService implements InsuranceCalcService {
 
   @Override
