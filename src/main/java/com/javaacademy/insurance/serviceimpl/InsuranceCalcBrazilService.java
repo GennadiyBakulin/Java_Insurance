@@ -1,6 +1,6 @@
 package com.javaacademy.insurance.serviceimpl;
 
-import com.javaacademy.insurance.entity.enumentity.TypeOfInsurance;
+import com.javaacademy.insurance.contract.enums.TypeOfInsurance;
 import com.javaacademy.insurance.service.InsuranceCalcService;
 import java.math.BigDecimal;
 

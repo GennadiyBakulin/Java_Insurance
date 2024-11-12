@@ -1,9 +1,9 @@
 package com.javaacademy.insurance.serviceimpl;
 
-import com.javaacademy.insurance.entity.InsuranceContract;
-import com.javaacademy.insurance.entity.enumentity.Country;
-import com.javaacademy.insurance.entity.enumentity.Currency;
-import com.javaacademy.insurance.entity.enumentity.TypeOfInsurance;
+import com.javaacademy.insurance.contract.InsuranceContract;
+import com.javaacademy.insurance.contract.enums.Country;
+import com.javaacademy.insurance.contract.enums.Currency;
+import com.javaacademy.insurance.contract.enums.TypeOfInsurance;
 import com.javaacademy.insurance.service.InsuranceService;
 import com.javaacademy.insurance.utils.ContractNumberGenerator;
 import java.math.BigDecimal;

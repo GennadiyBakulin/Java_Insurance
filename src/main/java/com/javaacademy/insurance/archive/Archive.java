@@ -1,5 +1,6 @@
-package com.javaacademy.insurance.entity;
+package com.javaacademy.insurance.archive;
 
+import com.javaacademy.insurance.contract.InsuranceContract;
 import java.util.HashMap;
 import java.util.Map;
 

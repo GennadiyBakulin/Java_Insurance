@@ -1,4 +1,4 @@
-package com.javaacademy.insurance.entity.enumentity;
+package com.javaacademy.insurance.contract.enums;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

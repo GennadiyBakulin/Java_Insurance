@@ -1,9 +1,9 @@
 package com.javaacademy.insurance.service;
 
-import com.javaacademy.insurance.entity.Archive;
-import com.javaacademy.insurance.entity.InsuranceContract;
-import com.javaacademy.insurance.entity.enumentity.StatusContract;
-import com.javaacademy.insurance.entity.enumentity.TypeOfInsurance;
+import com.javaacademy.insurance.archive.Archive;
+import com.javaacademy.insurance.contract.InsuranceContract;
+import com.javaacademy.insurance.contract.enums.StatusContract;
+import com.javaacademy.insurance.contract.enums.TypeOfInsurance;
 import java.math.BigDecimal;
 
 public interface InsuranceService {
