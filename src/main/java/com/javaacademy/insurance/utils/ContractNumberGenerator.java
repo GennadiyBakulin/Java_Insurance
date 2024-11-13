@@ -1,11 +1,14 @@
 package com.javaacademy.insurance.utils;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class ContractNumberGenerator {
 
-  private static int countContracts;
+  private int countContracts;
 
-  public static String contractNumberGenerator() {
+  public String contractNumberGenerator() {
 
-    return String.format("%08d", countContracts++);
+    return String.format("%03d", ++countContracts);
   }
 }
