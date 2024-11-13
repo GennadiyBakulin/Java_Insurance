@@ -1,0 +1,9 @@
+country:
+  name: Japan
+  currency: yen
+  robbery:
+    ratio: 0.01
+    adding: 10000
+  medical:
+    ratio: 0.015
+    adding: 12000

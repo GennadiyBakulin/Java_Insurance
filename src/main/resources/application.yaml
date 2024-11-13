@@ -1,27 +1,3 @@
 spring:
   profiles:
     active: brazil
----
-spring:
-  profiles: brazil
-country:
-  name: Brazil
-  currency: real
-  robbery:
-    ratio: 0.05
-    adding: 300
-  medical:
-    ratio: 0.03
-    adding: 800
----
-spring:
-  profiles: japan
-country:
-  name: Japan
-  currency: yen
-  robbery:
-    ratio: 0.01
-    adding: 10000
-  medical:
-    ratio: 0.015
-    adding: 12000

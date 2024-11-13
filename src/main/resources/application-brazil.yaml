@@ -1,0 +1,9 @@
+country:
+  name: Brazil
+  currency: real
+  robbery:
+    ratio: 0.05
+    adding: 300
+  medical:
+    ratio: 0.03
+    adding: 800
