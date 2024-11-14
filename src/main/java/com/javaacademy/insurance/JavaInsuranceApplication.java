@@ -14,6 +14,9 @@ import org.springframework.context.ConfigurableApplicationContext;
 @SpringBootApplication
 public class JavaInsuranceApplication {
 
+  private static final BigDecimal BILLIARD = BigDecimal.valueOf(1_000_000);
+  private static final BigDecimal TEN_BILLIARD = BigDecimal.valueOf(10_000_000);
+
   public static void main(String[] args) {
     ConfigurableApplicationContext context = SpringApplication.run(JavaInsuranceApplication.class,
         args);
@@ -23,13 +26,13 @@ public class JavaInsuranceApplication {
         + "сумма покрытия 1 000 000. Ожидаемая стоимость: 20 000");
     InsuranceCalcJapanService calcJapanService = context.getBean(InsuranceCalcJapanService.class);
     log.info(calcJapanService.costInsurance(
-        BigDecimal.valueOf(1_000_000),
+        BILLIARD,
         TypeOfInsurance.PROTECTION_FROM_ROBBERY).toString());
     log.info("-----------------Japan---------------------");
     log.info("Рассчитать стоимость страховки при мед страховке, "
         + "сумма покрытия 10 000 000. Ожидаемая стоимость: 162 000");
     log.info(calcJapanService.costInsurance(
-        BigDecimal.valueOf(10000000),
+        TEN_BILLIARD,
         TypeOfInsurance.MEDICAL_INSURANCE).toString());
 
 //    log.info("----------------Brazil----------------------");
@@ -50,7 +53,8 @@ public class JavaInsuranceApplication {
         + "сумма покрытия 1 000 000, тип - от грабежа");
     InsuranceServiceJapan serviceJapan = context.getBean(InsuranceServiceJapan.class);
     InsuranceContract contractMedicalJapan = serviceJapan.issuingInsuranceOffer(
-        BigDecimal.valueOf(1000000), "Иванов Иван Иванович",
+        BILLIARD,
+        "Иванов Иван Иванович",
         TypeOfInsurance.PROTECTION_FROM_ROBBERY);
     log.info(contractMedicalJapan.toString());
     log.info("На выход из метода оплаты страховки получаем:");
@@ -60,7 +64,8 @@ public class JavaInsuranceApplication {
     log.info("Получить предложение по страховке, на вход: Петров Петр Петрович, "
         + "сумма покрытия 1 000 000, тип - от грабежа");
     InsuranceContract contractMedicalJapan2 = serviceJapan.issuingInsuranceOffer(
-        BigDecimal.valueOf(1000000), "Петров Петр Петрович",
+        BILLIARD,
+        "Петров Петр Петрович",
         TypeOfInsurance.PROTECTION_FROM_ROBBERY);
     log.info(contractMedicalJapan2.toString());
     log.info("На выход из метода оплаты страховки получаем:");
