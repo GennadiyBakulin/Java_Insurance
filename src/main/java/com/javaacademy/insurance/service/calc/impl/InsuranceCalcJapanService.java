@@ -3,6 +3,7 @@ package com.javaacademy.insurance.service.calc.impl;
 import com.javaacademy.insurance.contract.enums.TypeOfInsurance;
 import com.javaacademy.insurance.service.calc.InsuranceCalcService;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Profile;
@@ -26,8 +27,10 @@ public class InsuranceCalcJapanService implements InsuranceCalcService {
   @Override
   public BigDecimal costInsurance(BigDecimal amountOfCoverage, TypeOfInsurance typeOfInsurance) {
     return switch (typeOfInsurance) {
-      case MEDICAL_INSURANCE -> amountOfCoverage.multiply(medicalRatio).add(medicalAdding);
-      case PROTECTION_FROM_ROBBERY -> amountOfCoverage.multiply(robberyRatio).add(robberyAdding);
+      case MEDICAL_INSURANCE -> amountOfCoverage.multiply(medicalRatio).add(medicalAdding)
+          .setScale(2, RoundingMode.HALF_EVEN);
+      case PROTECTION_FROM_ROBBERY -> amountOfCoverage.multiply(robberyRatio).add(robberyAdding)
+          .setScale(2, RoundingMode.HALF_EVEN);
     };
   }
 }
