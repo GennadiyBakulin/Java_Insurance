@@ -1,4 +1,4 @@
-package com.javaacademy.insurance.service;
+package com.javaacademy.insurance.service.service;
 
 import com.javaacademy.insurance.contract.InsuranceContract;
 import com.javaacademy.insurance.contract.enums.TypeOfInsurance;

@@ -1,4 +1,4 @@
-package com.javaacademy.insurance.utils;
+package com.javaacademy.insurance.service.numbergenerator;
 
 import org.springframework.stereotype.Component;
 

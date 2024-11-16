@@ -2,8 +2,8 @@ package com.javaacademy.insurance;
 
 import com.javaacademy.insurance.contract.InsuranceContract;
 import com.javaacademy.insurance.contract.enums.TypeOfInsurance;
-import com.javaacademy.insurance.serviceimpl.InsuranceCalcJapanService;
-import com.javaacademy.insurance.serviceimpl.InsuranceServiceJapan;
+import com.javaacademy.insurance.service.calc.impl.InsuranceCalcJapanService;
+import com.javaacademy.insurance.service.service.impl.InsuranceServiceJapan;
 import java.math.BigDecimal;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;

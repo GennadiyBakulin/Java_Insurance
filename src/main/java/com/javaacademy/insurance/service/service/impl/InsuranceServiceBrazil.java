@@ -1,14 +1,15 @@
-package com.javaacademy.insurance.serviceimpl;
+package com.javaacademy.insurance.service.service.impl;
 
-import com.javaacademy.insurance.archive.Archive;
+import com.javaacademy.insurance.service.archive.Archive;
 import com.javaacademy.insurance.contract.InsuranceContract;
 import com.javaacademy.insurance.contract.enums.StatusContract;
 import com.javaacademy.insurance.contract.enums.TypeOfInsurance;
-import com.javaacademy.insurance.data.CountryData;
-import com.javaacademy.insurance.service.InsuranceService;
-import com.javaacademy.insurance.utils.ContractNumberGenerator;
+import com.javaacademy.insurance.service.calc.impl.InsuranceCalcBrazilService;
+import com.javaacademy.insurance.service.service.InsuranceService;
+import com.javaacademy.insurance.service.numbergenerator.ContractNumberGenerator;
 import java.math.BigDecimal;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
@@ -20,7 +21,11 @@ public class InsuranceServiceBrazil implements InsuranceService {
   private final Archive archive;
   private final InsuranceCalcBrazilService calcBrazilService;
   private final ContractNumberGenerator numberGenerator;
-  private final CountryData data;
+
+  @Value("${name}")
+  private String nameCountry;
+  @Value("${currency}")
+  private String nameCurrency;
 
   @Override
   public InsuranceContract issuingInsuranceOffer(BigDecimal amountOfCoverage, String fullName,
@@ -29,9 +34,9 @@ public class InsuranceServiceBrazil implements InsuranceService {
         numberGenerator.contractNumberGenerator(),
         calcBrazilService.costInsurance(amountOfCoverage, typeOfInsurance),
         amountOfCoverage,
-        data.getCurrency(),
+        nameCurrency,
         fullName,
-        data.getName(),
+        nameCountry,
         typeOfInsurance);
     archive.addContractToArchive(insuranceContract);
     return insuranceContract;

@@ -1,4 +1,4 @@
-package com.javaacademy.insurance.archive;
+package com.javaacademy.insurance.service.archive;
 
 import com.javaacademy.insurance.contract.InsuranceContract;
 import java.util.HashMap;
