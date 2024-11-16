@@ -1,12 +1,12 @@
 package com.javaacademy.insurance.service.service.impl;
 
-import com.javaacademy.insurance.service.archive.Archive;
 import com.javaacademy.insurance.contract.InsuranceContract;
 import com.javaacademy.insurance.contract.enums.StatusContract;
 import com.javaacademy.insurance.contract.enums.TypeOfInsurance;
+import com.javaacademy.insurance.service.archive.Archive;
 import com.javaacademy.insurance.service.calc.impl.InsuranceCalcBrazilService;
-import com.javaacademy.insurance.service.service.InsuranceService;
 import com.javaacademy.insurance.service.numbergenerator.ContractNumberGenerator;
+import com.javaacademy.insurance.service.service.InsuranceService;
 import java.math.BigDecimal;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
